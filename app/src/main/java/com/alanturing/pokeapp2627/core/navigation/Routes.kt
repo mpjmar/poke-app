@@ -5,4 +5,7 @@ import kotlinx.serialization.Serializable
 sealed class Routes(val route: String) {
     @Serializable
     object PokeList: Routes("listScreen")
+
+    @Serializable
+    object PokeDetails: Routes("detailsScreen/{id}")
 }
