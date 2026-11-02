@@ -1,6 +1,7 @@
 package com.alanturing.pokeapp2627.features.pokemon.data.remote
 
 import com.alanturing.pokeapp2627.features.pokemon.data.model.Pokemon
+import com.google.gson.annotations.SerializedName
 
 data class PokemonResult(
     val id:Int,
@@ -8,7 +9,8 @@ data class PokemonResult(
     val sprites: PokemonSprites
 )
 data class PokemonSprites(
-    val frontDefault:String,
+    @SerializedName("front_default")
+    val frontDefault: String?,
 )
 data class PokemonListResult(
     val results: List<PokemonListItemResult>
@@ -22,7 +24,7 @@ fun PokemonResult.toModel(): Pokemon {
     return Pokemon(
         id = this.id,
         name = this.name,
-        pokemonImageUrl = this.sprites.frontDefault,
+        pokemonImageUrl = this.sprites.frontDefault ?: "",
     )
 
 }

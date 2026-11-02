@@ -12,11 +12,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
-
     @Provides
     @Singleton
     fun provideHttpClient(): PokeApi {
-        val retrofit:Retrofit = Retrofit.Builder()
+        val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl("https://pokeapi.co/api/v2")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

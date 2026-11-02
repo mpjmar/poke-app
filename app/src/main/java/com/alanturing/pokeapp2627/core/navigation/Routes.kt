@@ -4,8 +4,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 sealed class Routes(val route: String) {
     @Serializable
-    object PokeList: Routes("listScreen")
+    object PokeList: Routes("pokeList")
 
     @Serializable
-    object PokeDetails: Routes("detailsScreen/{id}")
+    class PokeDetails(val id: Int): Routes("pokeDetails/${id}")
 }

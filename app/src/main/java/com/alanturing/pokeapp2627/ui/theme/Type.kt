@@ -1,4 +1,4 @@
-package com.alanturing.pokeapp2627.core.ui.theme
+package com.alanturing.pokeapp2627.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
